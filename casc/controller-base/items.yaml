@@ -1,0 +1,49 @@
+removeStrategy:
+  items: "none"
+  rbac: "sync"
+
+items:
+  - kind: "pipeline"
+    name: "Demo-Pipeline"
+    displayName: "Demo Pipeline"
+    description: "Created automatically using CasC bundles"
+
+    definition:
+      cpsFlowDefinition:
+        sandbox: true
+        script: |
+          pipeline {
+              agent {
+                kubernetes {
+                  yaml '''
+                    apiVersion: v1
+                    kind: Pod
+                    spec:
+                      containers:
+                      - name: alpine
+                        image: alpine:3.20
+                        command:
+                          - cat
+                        tty: true
+                '''
+                }
+              }
+              stages {
+                  stage('Hello') {
+                      steps {
+                          echo 'Hello from Controller-3 !!!!!!!!'
+                      }
+                  }
+
+                  stage('Set Build Name') {
+                      steps {
+                          buildName "Controller-3-Demo-${BUILD_NUMBER}"
+                      }
+                  }                  
+                  stage('Done') {
+                      steps {
+                          echo 'Pipeline created through CasC!'
+                      }
+                  }
+              }
+          }
