@@ -35,11 +35,11 @@ items:
                       }
                   }
 
-                  # stage('Set Build Name') {
-                  #     steps {
-                  #         buildName "Controller-1-Demo-${BUILD_NUMBER}"
-                  #     }
-                  # }                  
+                  // stage('Set Build Name') {
+                  //     steps {
+                  //        buildName "Controller-1-Demo-${BUILD_NUMBER}"
+                  //    }
+                  // }                  
                   stage('Done') {
                       steps {
                           echo 'Pipeline created through CasC!'
