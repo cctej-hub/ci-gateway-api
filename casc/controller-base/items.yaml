@@ -31,13 +31,13 @@ items:
               stages {
                   stage('Hello') {
                       steps {
-                          echo 'Hello from Controller-3 !!!!!!!!'
+                          echo 'Hello from Controller1 !!!'
                       }
                   }
 
                   stage('Set Build Name') {
                       steps {
-                          buildName "Controller-3-Demo-${BUILD_NUMBER}"
+                          buildName "Controller-1-Demo-${BUILD_NUMBER}"
                       }
                   }                  
                   stage('Done') {
