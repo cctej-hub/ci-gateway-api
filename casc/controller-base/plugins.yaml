@@ -1,36 +1,88 @@
-# Plugin Categories:
-#   cap - is this a CAP plugin?
-#   3rd - is this a 3rd party plugin?
-#   old - is this a deprecated plugin?
-#   bst - installed by default
-#   dep - installed as dependency
-#   src - used as a source plugin for this list
-plugins:
-  - id: cloudbees-casc-client # cap src
-  - id: cloudbees-casc-items-controller # cap src
-  - id: cloudbees-github-reporting # cap src
-  - id: cloudbees-google-cloud-storage-cache # cap src
-  - id: cloudbees-groovy-view # cap src
-  - id: cloudbees-inactive-items # cap src
-  - id: cloudbees-jenkins-advisor # cap src
-  - id: cloudbees-monitoring # cap src
-  - id: cloudbees-nodes-plus # cap src
-  - id: cloudbees-pipeline-explorer # cap src
-  - id: cloudbees-s3-cache # cap src
-  - id: cloudbees-ssh-slaves # cap src
-  - id: cloudbees-view-creation-filter # cap src
-  - id: cloudbees-workflow-template # cap src
-  - id: cloudbees-hashicorp-vault # cap src
-  - id: config-file-provider # cap src
-  - id: email-ext # cap src
-  - id: github-branch-source # cap src
-  - id: infradna-backup # cap src
-  - id: operations-center-cloud # cap src
-  - id: workflow-aggregator # cap src
-  - id: workflow-cps-checkpoint # cap src
+# # Plugin Categories:
+# #   cap - is this a CAP plugin?
+# #   3rd - is this a 3rd party plugin?
+# #   old - is this a deprecated plugin?
+# #   bst - installed by default
+# #   dep - installed as dependency
+# #   src - used as a source plugin for this list
+# plugins:
+#   - id: cloudbees-casc-client # cap src
+#   - id: cloudbees-casc-items-controller # cap src
+#   - id: cloudbees-github-reporting # cap src
+#   - id: cloudbees-google-cloud-storage-cache # cap src
+#   - id: cloudbees-groovy-view # cap src
+#   - id: cloudbees-inactive-items # cap src
+#   - id: cloudbees-jenkins-advisor # cap src
+#   - id: cloudbees-monitoring # cap src
+#   - id: cloudbees-nodes-plus # cap src
+#   - id: cloudbees-pipeline-explorer # cap src
+#   - id: cloudbees-s3-cache # cap src
+#   - id: cloudbees-ssh-slaves # cap src
+#   - id: cloudbees-view-creation-filter # cap src
+#   - id: cloudbees-workflow-template # cap src
+#   - id: cloudbees-hashicorp-vault # cap src
+#   - id: config-file-provider # cap src
+#   - id: email-ext # cap src
+#   - id: github-branch-source # cap src
+#   - id: infradna-backup # cap src
+#   - id: operations-center-cloud # cap src
+#   - id: workflow-aggregator # cap src
+#   - id: workflow-cps-checkpoint # cap src
 
-  # Example non-CAP plugins
+#   # Example non-CAP plugins
+#   - id: sonar
+#     version: "2.15"
+#   - id: slack
+#     version: "684.v1821033a_d1b_5"
+
+
+# ==============================================================================
+# CasC v2 Plugins Configuration
+# ==============================================================================
+version: "1"
+
+# 1. Catalog entry mapping non-CAP plugins to public Jenkins plugin repositories
+catalog:
+  version: "1"
+  repositories:
+    - id: "jenkins-releases"
+      url: "https://repo.jenkins-ci.org/releases/"
+  plugins:
+    - id: "sonar"
+      version: "2.15"
+      groupId: "org.jenkins-ci.plugins"
+      artifactId: "sonar"
+      repositoryId: "jenkins-releases"
+    - id: "slack"
+      version: "684.v1821033a_d1b_5"
+      groupId: "org.jenkins-ci.plugins"
+      artifactId: "slack"
+      repositoryId: "jenkins-releases"
+
+# 2. Plugins to install on the controller
+plugins:
+  - id: cloudbees-casc-client             # cap src
+  - id: cloudbees-casc-items-controller   # cap src
+  - id: cloudbees-github-reporting        # cap src
+  - id: cloudbees-google-cloud-storage-cache # cap src
+  - id: cloudbees-groovy-view             # cap src
+  - id: cloudbees-inactive-items          # cap src
+  - id: cloudbees-jenkins-advisor         # cap src
+  - id: cloudbees-monitoring              # cap src
+  - id: cloudbees-nodes-plus              # cap src
+  - id: cloudbees-pipeline-explorer       # cap src
+  - id: cloudbees-s3-cache                # cap src
+  - id: cloudbees-ssh-slaves              # cap src
+  - id: cloudbees-view-creation-filter    # cap src
+  - id: cloudbees-workflow-template       # cap src
+  - id: cloudbees-hashicorp-vault         # cap src
+  - id: config-file-provider              # cap src
+  - id: email-ext                         # cap src
+  - id: github-branch-source              # cap src
+  - id: infradna-backup                   # cap src
+  - id: operations-center-cloud           # cap src
+  - id: workflow-aggregator               # cap src
+  - id: workflow-cps-checkpoint           # cap src
+  # Non-CAP plugins declared in catalog above:
   - id: sonar
-    version: "2.15"
   - id: slack
-    version: "684.v1821033a_d1b_5"
