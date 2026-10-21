@@ -15,19 +15,10 @@
 # ==============================================================================
 # plugin-catalog.yaml
 # ==============================================================================
-# ==============================================================================
-# plugin-catalog.yaml
-# ==============================================================================
 version: "1"
 type: "plugin-catalog"
 name: "custom-plugin-catalog"
 configurations:
-  - configurations:
-      - repositories:
-          - id: "jenkins-releases"
-            url: "https://repo.jenkins-ci.org/releases/"
-        includePlugins:
-          sonar:
-            version: "2.15"
-          slack:
-            version: "684.v1821033a_d1b_5"
+  - includePlugins:
+      sonar:
+        version: "2.15"
