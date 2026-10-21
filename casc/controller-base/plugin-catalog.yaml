@@ -22,3 +22,5 @@ configurations:
   - includePlugins:
       sonar:
         version: "2.15"
+      ansible:
+        version: "635.v34b_48e979c86"
