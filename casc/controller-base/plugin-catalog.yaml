@@ -2,13 +2,12 @@
 # plugin-catalog.yaml
 # ==============================================================================
 version: "1"
-name: "custom-plugin-catalog"
-displayName: "Custom Non-CAP Plugins"
-repositories:
-  - id: "jenkins-releases"
-    url: "https://repo.jenkins-ci.org/releases/"
-includePlugins:
-  sonar:
-    version: "2.15"
-  slack:
-    version: "684.v1821033a_d1b_5"
+type: "plugin-catalog"
+configurations:
+  - name: "custom-plugin-catalog"
+    displayName: "Custom Non-CAP Plugins"
+    includePlugins:
+      sonar:
+        version: "2.15"
+      slack:
+        version: "684.v1821033a_d1b_5"
