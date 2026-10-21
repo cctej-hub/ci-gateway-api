@@ -28,3 +28,9 @@ plugins:
   - id: operations-center-cloud # cap src
   - id: workflow-aggregator # cap src
   - id: workflow-cps-checkpoint # cap src
+
+  # Example non-CAP plugins
+  - id: sonar
+    version: "2.15"
+  - id: slack
+    version: "684.v1821033a_d1b_5"
