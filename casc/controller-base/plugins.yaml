@@ -28,3 +28,6 @@ plugins:
   - id: operations-center-cloud # cap src
   - id: workflow-aggregator # cap src
   - id: workflow-cps-checkpoint # cap src
+
+  # Non-cap plugins:
+  - id: sonar
