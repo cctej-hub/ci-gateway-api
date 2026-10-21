@@ -1,7 +1,9 @@
 apiVersion: "2"
 id: "controller"
 description: "CasC bundle for controller"
-version: "1"
+version: "2"
+catalog:
+  - "plugin-catalog.yaml"
 jcasc:
   - "jenkins.yaml"
   - "credentials.yaml"
