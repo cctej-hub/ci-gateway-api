@@ -4,8 +4,7 @@
 version: "1"
 type: "plugin-catalog"
 configurations:
-  - name: "custom-plugin-catalog"
-    displayName: "Custom Non-CAP Plugins"
+  - version: "1"
     includePlugins:
       sonar:
         version: "2.15"
