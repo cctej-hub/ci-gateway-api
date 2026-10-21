@@ -3,9 +3,9 @@
 # ==============================================================================
 version: "1"
 type: "plugin-catalog"
+name: "custom-plugin-catalog"
 configurations:
-  - version: "1"
-    includePlugins:
+  - includePlugins:
       sonar:
         version: "2.15"
       slack:
